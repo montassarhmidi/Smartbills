@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.affable.smartbills">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <application
+        android:name=".utils.MultiLanguage"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SmartBills">
+
+        <activity
+            android:name=".startup.SplashScreen"
+            android:theme="@style/Theme.SmartBills.SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".startup.IntroSlider"
+            android:theme="@style/Theme.SmartBills.SplashScreen" />
+
+        <activity
+            android:name=".startup.SetAccountInfoActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.SmartBills.SplashScreen"/>
+
+        <activity
+            android:name=".startup.SetPasswordActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.SmartBills.SplashScreen"/>
+
+        <activity
+            android:name=".startup.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.SmartBills.SplashScreen" />
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.SmartBills.SplashScreen" />
+        <activity android:name=".invoice.pdf.ViewPdfActivity" />
+        <activity android:name=".invoice.PaymentHistoryActivity" />
+        <activity android:name=".invoice.OrderDetailsActivity" />
+        <activity android:name=".cart.CartActivity" />
+        <activity
+            android:name=".sales.SalesItemsDetailsActivity"
+            android:theme="@style/Theme.SmartBills.SplashScreen" />
+        <activity android:name=".items.EditItemsActivity" />
+        <activity android:name=".items.ScannerViewActivity" />
+        <activity android:name=".items.AddItemsActivity" />
+        <activity android:name=".expenses.EditExpenseActivity" />
+        <activity android:name=".expenses.AddExpenseActivity" />
+        <activity android:name=".clients.EditClientActivity" />
+        <activity android:name=".clients.AddClientActivity" />
+        <activity
+            android:name=".settings.SettingsActivity"
+            android:label="@string/settings"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".settings.backup.BackupActivity"
+            android:label="@string/data_backup"
+            android:parentActivityName=".settings.SettingsActivity" />
+        <activity
+            android:name=".settings.payment_metthod.PaymentMethodActivity"
+            android:label="@string/payment_methods"
+            android:parentActivityName=".settings.SettingsActivity" />
+        <activity
+            android:name=".settings.payment_metthod.EditPaymentActivity"
+            android:label="@string/update_payment"
+            android:parentActivityName=".settings.payment_metthod.PaymentMethodActivity" />
+        <activity
+            android:name=".settings.payment_metthod.AddPaymentActivity"
+            android:label="@string/add_payment_method"
+            android:parentActivityName=".settings.payment_metthod.PaymentMethodActivity" />
+        <activity
+            android:name=".settings.category.CategoriesActivity"
+            android:label="@string/categories"
+            android:parentActivityName=".settings.SettingsActivity" />
+        <activity
+            android:name=".settings.category.AddCategoryActivity"
+            android:label="@string/add_category"
+            android:parentActivityName=".settings.category.CategoriesActivity" />
+        <activity
+            android:name=".settings.category.EditCategoryActivity"
+            android:label="@string/update_category"
+            android:parentActivityName=".settings.category.CategoriesActivity" />
+        <activity
+            android:name=".settings.UserInfoActivity"
+            android:label="@string/ac_info"
+            android:parentActivityName=".settings.SettingsActivity" />
+        <activity
+            android:name=".settings.ChangePassActivity"
+            android:label="@string/change_pass"
+            android:parentActivityName=".settings.SettingsActivity" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:theme="@style/Theme.SmartBills.AboutUs" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.affable.smartbills.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

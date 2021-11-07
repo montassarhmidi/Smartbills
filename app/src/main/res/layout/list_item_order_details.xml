@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:elevation="4dp"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/image_placeholder" />
+
+        <TextView
+            android:id="@+id/itemName"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/alegreya_sans"
+            android:text="@string/item_name"
+            app:layout_constraintBottom_toTopOf="@+id/itemWeight"
+            app:layout_constraintStart_toEndOf="@+id/img_item" />
+
+        <TextView
+            android:id="@+id/itemWeight"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="@font/alegreya_sans"
+            android:text="@string/weight"
+            app:layout_constraintBottom_toTopOf="@+id/itemPriceInfo"
+            app:layout_constraintStart_toEndOf="@+id/img_item" />
+
+        <TextView
+            android:id="@+id/itemPriceInfo"
+            android:layout_width="68dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/alegreya_sans"
+            android:text="@string/price"
+            app:layout_constraintBottom_toBottomOf="@+id/img_item"
+            app:layout_constraintStart_toEndOf="@+id/img_item" />
+
+        <TextView
+            android:id="@+id/itemNameValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alegreya_sans"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/itemName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemName" />
+
+        <TextView
+            android:id="@+id/itemWeightValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alegreya_sans"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/itemWeight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemWeight" />
+
+        <TextView
+            android:id="@+id/itemPriceValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/alegreya_sans"
+            android:text="TextView"
+            app:layout_constraintBaseline_toBaselineOf="@+id/itemPriceInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/itemPriceInfo" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

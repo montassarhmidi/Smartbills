@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_200">#A1D5FF</color>
+    <color name="blue_500">#3C9AEB</color>
+    <color name="blue_700">#1E88E5</color>
+    <color name="irish_500">#43D9EC</color>
+    <color name="irish_700">#00BCD4</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="fab_color_blue">#42A5F5</color>
+    <color name="dark_grey">#2C2C2C</color>
+    <color name="green">#388E3C</color>
+    <color name="red">#C62828</color>
+    <color name="red_500">#D50000</color>
+    <color name="yellow">#FBC02D</color>
+    <color name="light_blue_bg">#64B5F6</color>
+
+    <color name="grey_5">#f2f2f2</color>
+    <color name="grey_10">#e6e6e6</color>
+    <color name="grey_40">#999999</color>
+    <color name="grey_60">#666666</color>
+    <color name="grey_80">#37474F</color>
+    <color name="grey_90">#263238</color>
+
+
+</resources>

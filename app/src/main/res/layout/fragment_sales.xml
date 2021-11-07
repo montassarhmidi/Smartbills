@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".sales.SalesFragment">
+
+
+    <!--search bar-->
+    <EditText
+        android:id="@+id/etxt_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_border"
+        android:defaultFocusHighlightEnabled="false"
+        android:drawableEnd="@drawable/ic_search_24"
+        android:ems="10"
+        android:focusableInTouchMode="true"
+        android:focusedByDefault="false"
+        android:fontFamily="@font/alegreya_sans"
+        android:hint="@string/search_items"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        tools:targetApi="o" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/etxt_search"
+        android:layout_marginTop="4dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/blue_200"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="4dp"
+                    android:fontFamily="@font/alegreya_sans"
+                    android:paddingStart="4dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/all_item_categories"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categories_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/blue_200">
+
+                <TextView
+                    android:id="@+id/items_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:fontFamily="@font/alegreya_sans"
+                    android:paddingStart="4dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/all_items"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reset_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:fontFamily="@font/alegreya_sans"
+                    android:paddingStart="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="4dp"
+                    android:text="@string/reset"
+                    android:textColor="@color/blue_700"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:targetApi="m" />
+
+            </RelativeLayout>
+
+
+            <!--no data visualizer-->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/no_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:src="@drawable/no_data" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_sans"
+                    android:text="@string/no_items_found"
+                    android:textAlignment="center"
+                    android:textColor="@color/blue_500"
+                    android:textSize="28sp" />
+
+            </LinearLayout>
+
+            <!--items list-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/product_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp" />
+
+            <!--gape creator at the end of recycler view-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="52dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/blue_500"
+        android:contentDescription="@string/fab_content_clients"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_shopping_cart_24"
+        app:tint="@color/white"
+        tools:ignore="RelativeOverlap" />
+
+
+    <TextView
+        android:id="@+id/text_count"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_alignTop="@id/fab"
+        android:layout_marginStart="-32dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@id/fab"
+        android:background="@drawable/shape_circle"
+        android:elevation="7dp"
+        android:gravity="center"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="8sp"
+        android:visibility="visible"
+        tools:ignore="SmallSp" />
+
+</RelativeLayout>
